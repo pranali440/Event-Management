@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Events</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Events</h1>
+        <p id="status"></p>
+        <table id="eventTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be injected here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("status").textContent = "Loading events...";
+
+        fetch('/api/events', {
+            credentials: 'include' 
+        })
+        .then(res => {
+            if (!res.ok) throw new Error("Session expired or not logged in");
+            return res.json();
+        })
+        .then(events => {
+            console.log("Events from server:", events);
+
+            const tbody = document.querySelector("#eventTable tbody");
+            document.getElementById("status").textContent = "";
+
+            if (events.length === 0) {
+                document.getElementById("status").textContent = "No events found.";
+            }
+
+            events.forEach(event => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${event.title}</td>
+                    <td>${event.description}</td>
+                    <td>${event.location}</td>
+                    <td>${new Date(event.date).toLocaleDateString()}</td>
+                    <td><button class="delete-btn" data-id="${event.id}">Delete</button></td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Add delete 
+            document.querySelectorAll(".delete-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    const eventId = button.getAttribute("data-id");
+                    if (confirm("Are you sure you want to delete this event?")) {
+                        fetch(`/api/events/${eventId}`, {
+                            method: 'DELETE',
+                            credentials: 'include'
+                        })
+                        .then(res => {
+                            if (!res.ok) throw new Error("Failed to delete event");
+                            // Remove row from the table
+                            button.closest("tr").remove();
+                        })
+                        .catch(err => {
+                            alert("Error deleting event: " + err.message);
+                        });
+                    }
+                });
+            });
+        })
+        .catch(err => {
+            console.error("Fetch error:", err); 
+            document.getElementById("status").innerHTML =
+                `<span class="error">Error: ${err.message}</span>`;
+        });
+    </script>
+</body>
+</html>

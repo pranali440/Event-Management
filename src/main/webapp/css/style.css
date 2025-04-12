@@ -1,0 +1,184 @@
+body {
+  background-color: rgb(240, 242, 245);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0, 255, 255);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: rgb(0, 255, 0); /*#333;  */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(255, 0, 128);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: rgb(255, 0, 128);
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+body {
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(255, 0, 128);
+  width: 100%;
+  max-width: 500px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: rgb(255, 0, 128);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid rgb(255, 0, 128);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(255, 0, 128);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: rgb(255, 0, 128);
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+a {
+  color: rgb(255, 0, 128);
+  text-decoration: none;
+}
+body {
+  background-color: rgb(255, 0, 128);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(255, 0, 128);
+  width: 90%;
+  max-width: 900px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(255, 0, 128);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 14px;
+  border: 1px solid rgb(255, 0, 128);
+  text-align: left;
+  word-break: break-word;
+}
+
+thead {
+  background-color: rgb(255, 0, 128);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(255, 0, 128);
+}
+
+tr:hover {
+  background-color: rgb(255, 0, 128);
+  transition: 0.2s;
+}
+
+.delete-btn {
+  background-color: rgb(255, 0, 128);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.delete-btn:hover {
+  background-color: rgb(255, 0, 128);
+}
